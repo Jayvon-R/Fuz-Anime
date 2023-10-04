@@ -17,10 +17,31 @@ h3 {
   color:rgb(140, 58, 218)
 }
 
-.anime-image{
+.anime-card-container {
   display: flex;
-  height: auto;
-  border: 2px solid #333;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: aqua;
+  padding: 20px;
+  margin: 50px;
 }
 
+.anime-card {
+  display: flex;
+  flex-direction:row
+}
 
+.anime-title {
+  color: blueviolet;
+  font-size: 16px; 
+}
+
+.anime-image {
+  width: 165px;
+  height: 290px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; 
+}
