@@ -1,10 +1,11 @@
 import React from "react";
 import Data from "./Data"
+import Header from "./Header";
 
 function App() {
   return (
     <div className="App">
-      <h3>Top Airing</h3>
+      <Header />
       <Data />
     </div>
   );
