@@ -14,15 +14,16 @@ code {
 }
 
 h1 {
-  color:rgb(140, 58, 218)
+  color:rgb(148, 118, 177)
 }
 
 .anime-card-container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 15px;
   background-color: aqua;
   padding: 20px;
   margin: 50px;
@@ -34,13 +35,13 @@ h1 {
 }
 
 .anime-title {
-  color: blueviolet;
+  color: rgb(87, 33, 138);
   font-size: 16px; 
 }
 
 .anime-image {
-  width: 165px;
-  height: 290px;
+  width: 145px;
+  height: 260px;
   max-width: 100%;
   max-height: 100%;
   object-fit: cover; 
@@ -61,3 +62,28 @@ h1 {
   transition: filter 0.3s ease-in-out;
 }
 
+.search-bar {
+  width: 200px; 
+  padding: 5px; 
+  border-radius: 4px; 
+  background-color: rgb(32, 32, 32);
+  position: absolute; 
+  top: 30px; 
+  right: 5%; 
+  padding: 10px; 
+  color: blueviolet;
+}
+
+.search-bar:focus {
+  outline: none; 
+  border: 1px solid blueviolet; 
+}
+
+.search-bar::placeholder {
+  color: blueviolet; 
+}
+
+.navbar {
+  background-color: purple;
+  border: 10px solid purple;
+}
