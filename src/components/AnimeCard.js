@@ -6,7 +6,6 @@ export default function AnimeCard({ anime }) {
             <a href={anime.url}>
             <img src={anime.image} className="anime-image"/>
             </a>
-            {/* <h4 className="anime-title">{anime.title}</h4> */}
         </div>
     )
 }
