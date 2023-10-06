@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimeCard from "./AnimeCard";
 
-export default function Data() {
+export default function TopAiringData() {
   const [animeData, setAnimeData] = useState([]);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ export default function Data() {
 
   return (
     <div>
+      <h1 className="top-airing">Top Airing</h1>
       <div className="anime-card-container">
         {animeData.map((anime) => (
           <AnimeCard key={anime.id} anime={anime} />

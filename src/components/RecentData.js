@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import AnimeCard from "./AnimeCard";
 
 export default function Data() {
   const [animeData, setAnimeData] = useState([]);
@@ -17,7 +18,13 @@ export default function Data() {
   }, []);
 
   return (
-    <div>
+    <div className="recent-episodes-container">
+        <h1 className="recent-episodes">Recent Episodes</h1>
+      <div className="anime-card-container">
+        {animeData.map((anime) => (
+          <AnimeCard key={anime.id} anime={anime} />
+        ))}
+      </div>
     </div>
   );
 }

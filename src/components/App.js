@@ -1,5 +1,6 @@
 import React from "react";
-import Data from "./TopAiringData"
+import TopAiringData from "./TopAiringData"
+import RecentData from "./RecentData"
 import NavBar from "./NavBar";
 import { Route, Switch } from "react-router-dom";
 
@@ -11,7 +12,8 @@ function App() {
         <Route path="/:id" />
       </Switch>
       <NavBar />
-      <Data />
+      <TopAiringData />
+      <RecentData />
     </div>
   );
 }
