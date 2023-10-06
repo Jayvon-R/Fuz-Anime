@@ -21,10 +21,17 @@ export default function NavBar() {
     }
   };
 
+    /*This function is so users can search by pressing enter*/
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleSearch();
+    }
+
   return (
     <div>
       <h1>Top Airing</h1>
       <div className="">
+        <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Search anime..."
@@ -40,6 +47,7 @@ export default function NavBar() {
         >
           Go
         </button>
+        </form>
 
         <div className="search-results-container">
           {searchResults.length > 0 &&
