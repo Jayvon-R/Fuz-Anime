@@ -46,6 +46,10 @@ h1 {
   object-fit: cover;
 }
 
+.anime-image-text {
+  display: none;
+}
+
 .anime-card:hover {
   transform: scale(1.06);
   transition: transform 0.3s ease-in-out;
@@ -57,20 +61,39 @@ h1 {
 }
 
 .anime-card:hover .anime-image {
-  filter: brightness(65%);
+  filter: brightness(45%);
   transition: filter 0.3s ease-in-out;
+}
+
+.anime-card:hover .anime-image-text {
+  display: flex;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  top: 80px;
+  width: 100%;
 }
 
 .search-bar {
   width: 200px;
-  padding: 5px;
-  border-radius: 2px;
   background-color: rgb(32, 32, 32);
   position: absolute;
   top: 30px;
   right: 5%;
   padding: 10px;
+  border-radius: 6px;
   color: blueviolet;
+}
+
+.search-icon {
+  width: 20px;
+  color: blueviolet;
+  position: absolute;
+  top: 29px;
+  right: 5%;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .search-results-container {
@@ -96,7 +119,7 @@ h1 {
   text-decoration: none;
   text-align: center;
   text-overflow: clip;
-  color: rgb(255, 255, 255);
+  color: rgb(151, 57, 240);
   font-size: 12px;
   font-weight: bold;
   padding: 10px;
@@ -125,15 +148,13 @@ h1 {
   transition: background-color 0.3s ease-in-out;
 }
 
-
-
 .search-bar:focus {
   outline: none;
   border: 1px solid blueviolet;
 }
 
 .search-bar::placeholder {
-  color: blueviolet;
+  color: rgb(151, 57, 240);
 }
 
 .search-image {

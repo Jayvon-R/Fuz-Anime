@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import searchIcon from "../images/icons8-search-30.png"
+
+
+
 
 export default function NavBar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,21 +36,14 @@ export default function NavBar() {
       <h1>Top Airing</h1>
       <div className="">
         <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search anime..."
-          className="search-bar"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-
-        <button
-          type="submit"
-          className="search-button"
-          onClick={handleSearch}
-        >
-          Go
-        </button>
+            <input
+            type="text"
+            placeholder="Search anime..."
+            className="search-bar"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <img src={searchIcon} className="search-icon"></img>
         </form>
 
         <div className="search-results-container">
