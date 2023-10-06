@@ -36,6 +36,11 @@ export default function NavBar() {
   return (
     <div>
       <h1>Top Airing</h1>
+      <div className="navbar">
+        <h3>Home</h3>
+        <h3>Popular</h3>
+        <h3>Random</h3>
+      </div>
       <img src={FuzAnime} className="fuz-anime-logo"></img>
       <div>
         <form onSubmit={handleSubmit}>
