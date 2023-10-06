@@ -1,55 +1,56 @@
-import React from "react"
-import { useState } from "react"
-import axios from "axios"
+import React, { useState } from "react";
+import axios from "axios";
 
-export default function NavBar(){
-    const [searchQuery, setSearchQuery] = useState("")
-    const [searchResults, setSearchResults] = useState([])
+export default function NavBar() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
-    const handleSearch = async () => {
-        const searchUrl = `https://api.consumet.org/anime/gogoanime/${searchQuery}?page=1`;
+  const handleSearch = async () => {
+    const searchUrl = `https://api.consumet.org/anime/gogoanime/${searchQuery}?page=1`;
 
-        try {
-            const response = await axios.get(searchUrl);
-            if (response.status === 200) {
-                const data = response.data;
-                setSearchResults(data.results);
-            } else {
-                console.error('Search API failed')
-            }
-        } catch (error) {
-            console.error(error);
-        }
+    try {
+      const response = await axios.get(searchUrl);
+      if (response.status === 200) {
+        const data = response.data;
+        setSearchResults(data.results);
+      } else {
+        console.error("Search API failed");
+      }
+    } catch (error) {
+      console.error(error);
     }
-    
+  };
 
-    return(
-        <div className="navbar">
-            <h1>Top Airing</h1>
+  return (
+    <div>
+      <h1>Top Airing</h1>
+      <div className="">
+        <input
+          type="text"
+          placeholder="Search anime..."
+          className="search-bar"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
 
-            <input 
-            type="text" 
-            placeholder="Search anime..." 
-            className="search-bar"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            />
+        <button
+          type="submit"
+          className="search-button"
+          onClick={handleSearch}
+        >
+          Go
+        </button>
 
-            <button 
-            type="submit" 
-            className="search-button"
-            onClick={handleSearch}
-            >Go
-            </button>
-
-            <div className="search-results">
-                {searchResults.map((anime) => (
-                    <a href={anime.url}>
-                        <img src={anime.image} className="search-image"/>
-                    </a>
-                ))}
-            </div>
-
+        <div className="search-results-container">
+          {searchResults.length > 0 &&
+            searchResults.map((anime) => (
+              <a href={anime.url} className="search-results" key={anime.id}>
+                <img src={anime.image} className="search-image" />
+                <h4 className="search-image-text">{anime.title}</h4>
+              </a>
+            ))}
         </div>
-    )
+      </div>
+    </div>
+  );
 }
