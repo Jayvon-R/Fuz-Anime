@@ -2,19 +2,29 @@ import React from "react";
 import TopAiringData from "./TopAiringData"
 import RecentData from "./RecentData"
 import NavBar from "./NavBar";
-import { Route, Switch } from "react-router-dom";
+import Popular from "./Popular";
+import { BrowserRouter as Router,Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <Switch>
-        <Route path="/"  />
-        <Route path="/:id" />
-      </Switch>
-      <NavBar />
+function Home(){
+  return(
+    <div>
       <TopAiringData />
       <RecentData />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/popular" component={Popular} />
+        </Switch>
+        <NavBar />
+      </div>
+    </Router>
   );
 }
 

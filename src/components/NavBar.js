@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import searchIcon from "../images/icons8-search-30.png"
 import FuzAnime from "../images/FuzAnime.png"
@@ -36,9 +37,15 @@ export default function NavBar() {
   return (
     <div>
       <div className="navbar">
-        <h3>Home</h3>
-        <h3>Popular</h3>
-        <h3>Random</h3>
+        <Link to="/" className="navbar-link">
+                <h3>Home</h3>
+            </Link>
+            <Link to="/popular" className="navbar-link">
+                <h3>Popular</h3>
+            </Link>
+            <Link to="/random" className="navbar-link">
+                <h3>Random</h3>
+            </Link>
       </div>
       <img src={FuzAnime} className="fuz-anime-logo" alt="Fuz-anime-logo"></img>
       <div>

@@ -29,12 +29,23 @@ h1 {
   flex-direction: row;
   gap: 30px;
   justify-content: center;
-  top: 7%;
   position: absolute;
+  top: 60px;
   width: 100%;
   color: rgb(151, 57, 240);
   text-decoration: none;
+  margin-left: auto;
 }
+
+.navbar-link{
+  text-decoration: none;
+  color: rgb(151, 57, 240);
+}
+
+.navbar-link:hover {
+  color: rgb(206, 170, 240);
+  transition: color 0.3s ease-in-out;
+} 
 
 .fuz-anime-logo {
   top: 0;
@@ -192,4 +203,20 @@ h1 {
 .recent-episodes-container {
   position: relative;
   bottom: 80px;
+}
+
+.popular-anime-card-container {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  top: 50px;
+  padding: 20px;
+  gap: 15px;
+  margin: 50px;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }

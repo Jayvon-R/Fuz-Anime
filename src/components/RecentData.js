@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnimeCard from "./AnimeCard";
 
-export default function Data() {
+export default function RecentData() {
   const [animeData, setAnimeData] = useState([]);
 
   useEffect(() => {
