@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import searchIcon from "../images/icons8-search-30.png"
+import FuzAnime from "../images/FuzAnime.png"
+
 
 
 
@@ -34,7 +36,8 @@ export default function NavBar() {
   return (
     <div>
       <h1>Top Airing</h1>
-      <div className="">
+      <img src={FuzAnime} className="fuz-anime-logo"></img>
+      <div>
         <form onSubmit={handleSubmit}>
             <input
             type="text"

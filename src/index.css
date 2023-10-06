@@ -14,23 +14,36 @@ code {
 }
 
 h1 {
-  color: rgb(148, 118, 177);
+  color: rgb(151, 57, 240);
+  position: relative;
+  top: 110px;
+  width:100%;
+  background-color: rgb(20, 20, 20);
+  text-align: center;
+  font-size: 30px;
+  padding: 5px;
+}
+
+.fuz-anime-logo {
+  top: 0;
+  position: absolute;
+  width: 48%;
+  max-width: 230px;
 }
 
 .anime-card-container {
-  position: absolute;
+  position: relative;
+  top: 50px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 15px;
+  justify-content: center;  
   padding: 20px;
+  gap: 15px;
   margin: 50px;
-}
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
-.anime-card {
-  display: flex;
-  flex-direction: row;
 }
 
 .anime-title {
