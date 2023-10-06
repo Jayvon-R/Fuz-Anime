@@ -8,14 +8,9 @@ export default function RecentData() {
     fetch("https://api.consumet.org/anime/gogoanime/recent-episodes")
       .then((response) => response.json())
       .then((data) => {
-        if (data && Array.isArray(data.results)) { 
-          setAnimeData(data.results);
-        } else {
-          console.error("Invalid data format:", data);
-        }
-      })
-      .catch((error) => console.error(error));
-  }, []);
+       setAnimeData(data.results)
+    })
+    }, []);
 
   return (
     <div className="recent-episodes-container">

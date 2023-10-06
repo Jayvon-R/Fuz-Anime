@@ -8,14 +8,9 @@ export default function TopAiringData() {
     fetch("https://api.consumet.org/anime/gogoanime/top-airing")
       .then((response) => response.json())
       .then((data) => {
-        if (data && Array.isArray(data.results)) { 
-          setAnimeData(data.results);
-        } else {
-          console.error("Invalid data format:", data);
-        }
-      })
-      .catch((error) => console.error(error));
-  }, []);
+      setAnimeData(data.results)
+    })
+    }, []);
 
   return (
     <div>
