@@ -14,16 +14,12 @@ export default function Popular(){
           const totalPages = 10;
           const baseUrl = "https://api.consumet.org/anime/gogoanime/top-airing";
           const results = [];
-    
+
           for (let page = 1; page <= totalPages; page++) {
-            try {
               const response = await axios.get(baseUrl, { params: { page }});
-                const data = response.data;
-                results.push(...data.results);
+              const data = response.data;
+              results.push(...data.results);
           }
-            catch (error) {
-                console.error(error);
-            }}
           setAnimeData(results);
         };
     
@@ -41,3 +37,4 @@ export default function Popular(){
         </div>
     )
 }
+
