@@ -212,9 +212,8 @@ h1 {
   flex-direction: column;
   top: 50px;
   padding: 20px;
-  gap: 15px;
+  gap: 18px;
   margin: 50px;
-  width: 100%;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -229,14 +228,7 @@ h1 {
   background-color:rgb(27, 27, 27);
   width: 100%;
   margin-left: auto;
-  transform: none !important;
+  transform: none;
+  transition: none;
 }
 
-.popular-anime-card .anime-image-text {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  color: white;
-  width: 100%;
-  font-size: 20px;
-}

@@ -1,5 +1,5 @@
 import React from "react";
-import AnimeCard from "./AnimeCard";
+import PopularAnimeCard from "./AnimeCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -31,7 +31,7 @@ export default function Popular(){
             <h1>Popular Anime</h1>
             <div className="popular-anime-card-container">
                 {animeData.map((anime) => (
-                    <AnimeCard key={anime.id} anime={anime} className="popular-anime-card"/>
+                    <PopularAnimeCard key={anime.id} anime={anime} />
                 ))}
             </div>
         </div>
