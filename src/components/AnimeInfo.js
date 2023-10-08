@@ -22,16 +22,18 @@ export default function AnimeInfo() {
   return (
     <div>
       {animeData ? (
-        <div>
-          <h1>{animeData.title}</h1>
-          <p>{animeData.description}</p>
-          <img src={animeData.image} alt={animeData.title} />
-          <p>Genres: {animeData.genres.join(", ")}</p>
-          <p>Release Date: {animeData.releaseDate}</p>
-          <p>Total Episodes: {animeData.totalEpisodes}</p>
-          <p>Sub or Dub: {animeData.subOrDub}</p>
-          <p>Type: {animeData.type}</p>
-          <h2>Episodes:</h2>
+          <div className="info-container">
+        <img src={animeData.image} alt={animeData.title} className="info-card" />
+        <h2 className="info-title">{animeData.title}</h2>
+        <div className="info-details">
+            <p className="description">{animeData.description}</p>
+            <p className="genres">Genres: {animeData.genres.join(", ")}</p>
+            <p className="release-date">Release Date: {animeData.releaseDate}</p>
+            <p className="total-episodes">Total Episodes: {animeData.totalEpisodes}</p>
+            <p className="sub-or-dub">Sub or Dub: {animeData.subOrDub}</p>
+            <p className="type">Type: {animeData.type}</p>
+      </div>
+
           <ul>
             {animeData.episodes.map((episode) => (
               <li key={episode.id}>
