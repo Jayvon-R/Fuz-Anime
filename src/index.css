@@ -301,10 +301,8 @@ h1 {
   background-color: rgb(32, 32, 32);
 }
 
-.center-container {
+.rating-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  position: relative;
+  top: 150px;
 }

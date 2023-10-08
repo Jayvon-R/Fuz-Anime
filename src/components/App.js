@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 import Popular from "./Popular";
 import { BrowserRouter as Router,Route, Switch } from "react-router-dom";
 import AnimeInfo from "./AnimeInfo";
-import AnimeRatings from "./AnimeRating";
 import AddAnimeRating from "./AddAnimeRating";
 
 function Home(){
@@ -31,7 +30,6 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/popular" component={Popular} />
           <Route path="/anime/:id" component={AnimeInfo} />
-          <AnimeRatings animeRatings={animeRatings} />
           <AddAnimeRating addAnimeRating={addAnimeRating} />
         </Switch>
         <NavBar />

@@ -1,22 +1,34 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import AddRatingForm from "./AddRatingForm";
 
 export default function AnimeInfo() {
   const { id } = useParams();
   const [animeData, setAnimeData] = useState(null);
+  const [ratings, setRatings] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3001/animeRatings?animeId=${id}`);
+      setRatings(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchAnimeData = async () => {
       try {
-        const response = await axios.get(`https://api.consumet.org/anime/gogoanime/info/${id}`)
+        const response = await axios.get(`https://api.consumet.org/anime/gogoanime/info/${id}`);
         setAnimeData(response.data);
+        fetchData(); 
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchData();
+    fetchAnimeData();
   }, [id]);
 
   return (
@@ -32,7 +44,16 @@ export default function AnimeInfo() {
             <p className="total-episodes">Total Episodes: {animeData.totalEpisodes}</p>
             <p className="sub-or-dub">Sub or Dub: {animeData.subOrDub}</p>
             <p className="type">Type: {animeData.type}</p>
+            <AddRatingForm animeId={id} onUpdateRatings={fetchData} />
           </div>
+
+          <ul>
+            {ratings.map((rating) => (
+              <li key={rating.id}>
+                Rating: {rating.rating}
+              </li>
+            ))}
+          </ul>
 
           <ul className="episode-list">
             {animeData.episodes.map((episode) => (

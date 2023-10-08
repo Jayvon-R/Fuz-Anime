@@ -22,7 +22,6 @@ const AddAnimeRating = ({ addAnimeRating }) => {
 
   return (
     <div>
-      <h2>Add Anime Rating</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Title:</label>
