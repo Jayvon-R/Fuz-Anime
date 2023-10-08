@@ -46,7 +46,7 @@ export default function NavBar() {
             <Link to="/Favorites" className="navbar-link">
                 <h3>Favorites</h3>
             </Link>
-            <Link to="/Login" className="navbar-link">
+            <Link to="/random" className="navbar-link">
                 <h3>Login</h3>
             </Link>
       </div>

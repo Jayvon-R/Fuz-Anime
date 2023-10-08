@@ -243,32 +243,57 @@ h1 {
 
 .info-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   position: relative;
   top: 150px;
+  width: 100%;
 }
 
 .info-card {
   display: relative;
-  flex-direction: column;
   padding: 10px;
   margin-top: 10px;
-  width: 40%;
+  margin: 10px;
+  width: 31%;
   margin-left: 20px;
 }
 
 .info-details {
   color: white;
-  font-size: 14px;
+  font-size: 12px;
   margin-left: 20px; 
+  margin-top: 10px;
+  width: 40%;
 }
 
 .info-title {
   position: absolute;
-  top: 0;   
   color: rgb(151, 57, 240);
-  font-size: 16px;
+  font-size: 1px;
   margin-left: 20px;
   align-items: center;
   display: flex;
+}
+
+.episode-list {
+  flex-basis: 100%; /* Make it span the full width */
+  list-style: none;
+  padding: 0;
+  margin-top: 10px; /* Add space between "Type" and the episode list */
+}
+
+.episode-link {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgb(19, 19, 19);
+  border-radius: 5px;
+}
+
+.episode-link:hover {
+  background-color: rgb(32, 32, 32);
 }
