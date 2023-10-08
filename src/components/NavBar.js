@@ -37,10 +37,10 @@ export default function NavBar() {
             <Link to="/popular" className="navbar-link">
                 <h3>Popular</h3>
             </Link>
-            <Link to="/Favorites" className="navbar-link">
+            <Link to="/favorites" className="navbar-link">
                 <h3>Favorites</h3>
             </Link>
-            <Link to="/random" className="navbar-link">
+            <Link to="/login" className="navbar-link">
                 <h3>Login</h3>
             </Link>
       </div>

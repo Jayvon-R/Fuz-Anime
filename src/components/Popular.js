@@ -9,7 +9,7 @@ export default function Popular(){
 
     useEffect(() => {
         const fetchData = async () => {
-          const totalPages = 10;
+          const totalPages = 5;
           const baseUrl = "https://api.consumet.org/anime/gogoanime/top-airing";
           const results = [];
 
