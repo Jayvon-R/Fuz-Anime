@@ -356,3 +356,11 @@ input[type="password"] {
   background-color: rgb(27, 27, 27);
   color: rgb(151, 57, 240)
 }
+
+.sign-up:hover {
+  background-color: rgb(54, 54, 54);
+}
+
+.sign-in:hover {
+  background-color: rgb(54, 54, 54);
+}

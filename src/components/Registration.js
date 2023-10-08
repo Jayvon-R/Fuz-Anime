@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Registration = () => {
+export default function Registration() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -15,40 +15,38 @@ const Registration = () => {
         password,
       });
 
-      // If registration is successful, you can handle the response here.
-      // Typically, you would store the authentication token and redirect to a logged-in page.
     } catch (error) {
       setError("Registration failed. Please try again.");
     }
   };
 
   return (
-    <div>
-      <h2>Registration</h2>
+    <div className="login-container">
+      <h2 className="login">Register</h2>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleRegistration}>
         <div>
-          <label>Email:</label>
+          <label className="input">Email:</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="input"
           />
         </div>
         <div>
-          <label>Password:</label>
+          <label className="input">Password:</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="input"
           />
         </div>
         <div>
-          <button type="submit">Register</button>
+          <button className="sign-up" type="submit">Register</button>
         </div>
       </form>
     </div>
   );
 };
-
-export default Registration;

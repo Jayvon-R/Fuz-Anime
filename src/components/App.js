@@ -6,6 +6,7 @@ import Popular from "./Popular";
 import { BrowserRouter as Router,Route, Switch } from "react-router-dom";
 import AnimeInfo from "./AnimeInfo";
 import Login from "./Login";
+import Registration from "./Registration";
 
 function Home(){
   return(
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/popular" component={Popular} />
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Registration} />
           <Route path="/anime/:id" component={AnimeInfo} />
         </Switch>
         <NavBar />
