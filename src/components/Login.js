@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+
+  // Use useHistory to programmatically navigate after successful login
+  const history = useHistory();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -13,8 +17,22 @@ const Login = () => {
       setError("Please enter both email and password.");
       return;
     }
-    console.log("Email:", email);
-    console.log("Password:", password);
+
+    try {
+      const response = await axios.post("/api/login", {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        console.log("Login Successful. Response:", response.data);
+        history.push("/"); 
+      } else {
+        setError("Login failed. Please try again.");
+      }
+    } catch (error) {
+      setError("Login failed. Please try again.");
+    }
   };
 
   return (
@@ -31,7 +49,7 @@ const Login = () => {
           />
         </div>
         <div>
-          <label >Password:</label>
+          <label>Password:</label>
           <input
             type="password"
             value={password}
@@ -40,10 +58,13 @@ const Login = () => {
         </div>
         <div>
           <Link to="/register" className="register-link">
-          <button className="sign-up" type="submit">Sign up</button>
+            <button className="sign-up" type="button">
+              Sign up
+            </button>
           </Link>
-          <button className="sign-in" type="submit">Sign in</button>
-
+          <button className="sign-in" type="submit">
+            Sign in
+          </button>
         </div>
       </form>
     </div>

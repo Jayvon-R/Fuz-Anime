@@ -1,0 +1,27 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "email": "user1@example.com",
+        "password": "password123"
+      },
+      {
+        "id": 2,
+        "email": "user2@example.com",
+        "password": "password456"
+      }
+    ],
+    "favorites": [
+      {
+        "id": 1,
+        "userId": 1,
+        "animeId": "anime123"
+      },
+      {
+        "id": 2,
+        "userId": 2,
+        "animeId": "anime456"
+      }
+    ]
+  }
+  
