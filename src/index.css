@@ -256,16 +256,16 @@ h1 {
   padding: 10px;
   margin-top: 10px;
   margin: 10px;
-  width: 31%;
+  width: 35vw;
   margin-left: 20px;
 }
 
 .info-details {
   color: white;
   font-size: 12px;
-  margin-left: 20px; 
+  margin-left: 50px; 
   margin-top: 10px;
-  width: 40%;
+  width: 40vw;
 }
 
 .info-title {
@@ -278,11 +278,12 @@ h1 {
 }
 
 .episode-list {
+  display: flex;
+  position: relative;
+  top: 100px;
+  width: 100%;
   list-style: none;
   padding: 0;
-  margin-top: 10px;
-  margin-left: 20px;
-  display: flex;
   flex-wrap: wrap;
 }
 
