@@ -5,9 +5,6 @@ import { useEffect, useState } from "react";
 
 export default function Popular(){
     const [animeData, setAnimeData] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-
 
     useEffect(() => {
         const fetchData = async () => {

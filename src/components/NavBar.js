@@ -14,9 +14,7 @@ export default function NavBar() {
           setSearchResults([]);
           return;
         }
-  
         const searchUrl = `https://api.consumet.org/anime/gogoanime/${searchQuery}?page=1`;
-  
         try {
           const response = await axios.get(searchUrl);
           if (response.status === 200) {
@@ -33,13 +31,9 @@ export default function NavBar() {
       fetchSearchResults();
     }, [searchQuery]);
 
-        
   return (
     <div>
       <div className="navbar">
-        <Link to="/" className="navbar-link">
-                <h3>Home</h3>
-            </Link>
             <Link to="/popular" className="navbar-link">
                 <h3>Popular</h3>
             </Link>
