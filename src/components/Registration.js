@@ -1,98 +1,61 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const USER_REGEX = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,24}$/;
 
 export default function Registration() {
-  const userRef = useRef();
-  const errRef = useRef();
-
-  const [user, setUser] = useState("");
+  const [usernameReg, setUsernameReg] = useState("");
   const [validName, setValidName] = useState(false);
-
-  const [pwd, setPwd] = useState("");
-  const [validPwd, setValidPwd] = useState(false);
+  const [passwordReg, setPasswordReg] = useState("");
+  const [validpassword, setValidpassword] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    const result = USER_REGEX.test(user);
-    console.log(result);
-    console.log(user);
-    setValidName(result);
-  }, [user]);
-
-  useEffect(() => {
-    const result = PWD_REGEX.test(pwd);
-    console.log(result);
-    console.log(pwd);
-    setValidPwd(result);
-  }, [pwd]);
-
-  useEffect(() => {
-    setErrMsg("");
-  }, [user, pwd]);
-
-  const handleSubmit = async (e) => {
+  const register = (e) => {
     e.preventDefault();
-
-    try {
-      await axios.post('http://localhost:3001/register', {
-        user,
-        pwd,
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    axios.post("http://localhost:3001/register", {
+      user: usernameReg, 
+      password: passwordReg
+    }) .then((response) => {
+      console.log(response);
+      setSuccess(true);
+    })
   }
-  
+
   return (
     <section className="login-container">
-      <p ref={errRef} className={errMsg ? "error" : "hidden"}>
-        {errMsg}
-      </p>
       <h2 className="login">Register</h2>
-      <form onSubmit={handleSubmit}>
-        <label className="input" htmlFor="user">
+      <form onSubmit={(event) => register(event)}>       
+       <label className="input" htmlFor="username">
           Username:
         </label>
         <input
           type="text"
-          id="user"
-          value={user}
+          id="username"
+          value={usernameReg}
           autoComplete="off"
-          ref={userRef}
-          onChange={(e) => setUser(e.target.value)}
+          onChange={(e) => setUsernameReg(e.target.value)}
           required
-          aria-aria-describedby="uidnote"
         />
         <p
           id="uidnote"
-          className={
-             user && !validName ? "instructions" : "offscreen"
-          }
+          className={usernameReg && !validName ? "instructions" : "offscreen"}
         >
           4 to 24 characters. <br />
           Letters, numbers, hyphens, <br /> underscores, and spaces allowed.
         </p>
 
-        <label className="input" htmlFor="pwd">
+        <label className="input" htmlFor="password">
           Password:
         </label>
         <input
           type="password"
           id="password"
-          value={pwd}
-          onChange={(e) => setPwd(e.target.value)}
+          value={passwordReg}
+          onChange={(e) => setPasswordReg(e.target.value)}
           required
-          aria-aria-describedby="pwdnote"
         />
-        <p
-          id="pwdnote"
-          className={!validPwd ? "instructions" : "offscreen"}
-        >
+        <p id="passwordnote" className={!validpassword ? "instructions" : "offscreen"}>
           8 to 24 characters. <br />
           Must include at least one uppercase letter, <br /> a number, and a
           special character. <br />
@@ -110,40 +73,3 @@ export default function Registration() {
     </section>
   );
 }
-
-//   return (
-//     <div className="login-container">
-//       <h2 className="login">Register</h2>
-
-//         <div>
-//           <h3>Registration Successful</h3>
-//         </div>
-//           <form onSubmit={handleRegistration}>
-//           <div>
-//             <label className="input">Email:</label>
-//             <input
-//               type="email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               className="input"
-//             />
-//           </div>
-//           <div>
-//             <label className="input">Password:</label>
-//             <input
-//               type="password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               className="input"
-//             />
-//           </div>
-//           <div>
-//             <button className="sign-up" type="submit">
-//               Register
-//             </button>
-//           </div>
-//         </form>
-//       )}
-//     </div>
-//   );
-// 
