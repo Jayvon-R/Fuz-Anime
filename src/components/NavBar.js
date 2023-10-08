@@ -34,14 +34,11 @@ export default function NavBar() {
   return (
     <div>
       <div className="navbar">
+            <Link to="/" className="navbar-link">
+                <h3>Home</h3>
+            </Link>
             <Link to="/popular" className="navbar-link">
                 <h3>Popular</h3>
-            </Link>
-            <Link to="/favorites" className="navbar-link">
-                <h3>Favorites</h3>
-            </Link>
-            <Link to="/login" className="navbar-link">
-                <h3>Login</h3>
             </Link>
       </div>
       <Link to="/" >

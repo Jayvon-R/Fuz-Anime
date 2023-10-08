@@ -1,27 +1,16 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "email": "user1@example.com",
-        "password": "password123"
-      },
-      {
-        "id": 2,
-        "email": "user2@example.com",
-        "password": "password456"
-      }
-    ],
-    "favorites": [
-      {
-        "id": 1,
-        "userId": 1,
-        "animeId": "anime123"
-      },
-      {
-        "id": 2,
-        "userId": 2,
-        "animeId": "anime456"
-      }
-    ]
-  }
-  
+  "ratings": [
+    {
+      "id": 1,
+      "title": "Naruto",
+      "genre": "Action, Adventure",
+      "rating": 7.99
+    },
+    {
+      "id": 2,
+      "title": "One Piece",
+      "genre": "Action, Adventure",
+      "rating": 8.71
+    }
+  ]
+}
