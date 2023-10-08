@@ -2,8 +2,6 @@
 
 FuzAnime - a single-page application (SPA) build using React that allows users to explore anime, watch anime, and add anime to a "favorites" list.
 
-![Screenshot of FuzAnime App](https://github.com/Jayvon-R/flatiron-phase-2-project/blob/main/Screenshot%202023-10-07%20214842.png?raw=true)
-
 ## Features
 
 - Browse a list of the current Top-Airing anime
