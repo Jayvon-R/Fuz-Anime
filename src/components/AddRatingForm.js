@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function AddRatingForm({ animeId, onUpdateRatings }) {
-  const [rating, setRating] = useState(5); 
+export default function AddRatingForm({
+  animeData,
+  setUserRating,
+}) {
+  const [rating, setRating] = useState(5);
 
   const handleAddRating = async () => {
     try {
-
-      const response = await axios.post("http://localhost:3001/animeRatings", {
-        animeId,
-        rating,
+      const response = await axios.post("http://localhost:3001/ratings", {
+        animeName: animeData.title,
+        rating: rating,
       });
-
-      console.log("Rating added:", response.data);
-
-      setRating(5); 
-
-      onUpdateRatings();
+      setUserRating(rating);
     } catch (error) {
       console.error("Error adding rating:", error);
     }
@@ -35,7 +32,9 @@ export default function AddRatingForm({ animeId, onUpdateRatings }) {
           required
         />
       </div>
-      <button className="rating-container" onClick={handleAddRating}>Add Rating</button>
+      <button className="rating-container" onClick={handleAddRating}>
+        Add Rating
+      </button>
     </div>
   );
 }

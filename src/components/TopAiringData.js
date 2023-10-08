@@ -4,13 +4,14 @@ import AnimeCard from "./AnimeCard";
 export default function TopAiringData() {
   const [animeData, setAnimeData] = useState([]);
 
+  // Fetches the top airing anime from the API
   useEffect(() => {
     fetch("https://api.consumet.org/anime/gogoanime/top-airing")
       .then((response) => response.json())
       .then((data) => {
-      setAnimeData(data.results)
-    })
-    }, []);
+        setAnimeData(data.results);
+      });
+  }, []);
 
   return (
     <div>

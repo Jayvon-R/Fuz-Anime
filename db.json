@@ -11,6 +11,31 @@
       "title": "One Piece",
       "genre": "Action, Adventure",
       "rating": 8.71
+    },
+    {
+      "animeName": "Tate no Yuusha no Nariagari Season 3",
+      "rating": 5,
+      "id": 3
+    },
+    {
+      "animeName": "Tate no Yuusha no Nariagari Season 3",
+      "rating": "10",
+      "id": 4
+    },
+    {
+      "animeName": "Tate no Yuusha no Nariagari Season 3",
+      "rating": "10",
+      "id": 5
+    },
+    {
+      "animeName": "Tate no Yuusha no Nariagari Season 3",
+      "rating": "10",
+      "id": 6
+    },
+    {
+      "animeName": "Naruto",
+      "rating": 5,
+      "id": 7
     }
   ]
 }
