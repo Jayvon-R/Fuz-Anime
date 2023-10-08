@@ -1,5 +1,5 @@
 import React from "react";
-import PopularAnimeCard from "./AnimeCard";
+import PopularAnimeCard from "./PopularAnimeCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
 

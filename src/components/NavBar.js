@@ -43,11 +43,16 @@ export default function NavBar() {
             <Link to="/popular" className="navbar-link">
                 <h3>Popular</h3>
             </Link>
-            <Link to="/random" className="navbar-link">
-                <h3>Random</h3>
+            <Link to="/Favorites" className="navbar-link">
+                <h3>Favorites</h3>
+            </Link>
+            <Link to="/Login" className="navbar-link">
+                <h3>Login</h3>
             </Link>
       </div>
-      <img src={FuzAnime} className="fuz-anime-logo" alt="Fuz-anime-logo"></img>
+      <Link to="/" >
+      <img src={FuzAnime} className="fuz-anime-logo" alt="fuz-anime-logo"></img>
+        </Link>
       <div>
         <form>
             <input

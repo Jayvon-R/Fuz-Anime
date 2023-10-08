@@ -208,7 +208,6 @@ h1 {
 .popular-anime-card-container {
   display: flex;
   position: relative;
-  flex-wrap: wrap;
   flex-direction: column;
   top: 50px;
   padding: 20px;
@@ -217,6 +216,10 @@ h1 {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.popular-anime-image {
+  width: 100px;
 }
 
 .popular-anime-card {
@@ -228,7 +231,13 @@ h1 {
   background-color:rgb(27, 27, 27);
   width: 100%;
   margin-left: auto;
-  transform: none;
-  transition: none;
+}
+
+.popular-anime-image-text {
+  text-align: center;
+  justify-content: center;
+  color: white;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
 
