@@ -38,7 +38,7 @@ export default function AnimeInfo() {
             {animeData.episodes.map((episode) => (
               <li key={episode.id}>
                 <a href={episode.url} target="" className="episode-link">
-                  EP: {episode.number}
+                  EP | {episode.number}
                 </a>
               </li>
             ))}
