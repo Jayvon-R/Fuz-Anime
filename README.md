@@ -31,6 +31,35 @@ cd flatiron-phase-2-project
 npm install
 ```
 
+4. Start the JSON Server for the backend
+
+```shell
+json-server --watch db.json --port 3001
+```
+
+5. Start the React development server
+
+```
+npm start
+```
+
+6. Go to http://localhost:3000 and you're set!
+
+## Usage
+
+- On the homepage, you can explore a list of popular anime.
+- Use the search bar to search for anime by title.
+- Click on an anime card to view detailed information about that anime.
+- From the anime details page, you can add the anime to your favorites list, or click on an episode and you will be redirected to the episode on Gogoanime.
+
+## Contributor's Guide
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the GNU GENERAL PUBLIC LICENSE - see LICENSE for details.
+
 
 
 
