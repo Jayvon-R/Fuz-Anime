@@ -2,6 +2,7 @@ import React from "react";
 import PopularAnimeCard from "./PopularAnimeCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Popular(){
     const [animeData, setAnimeData] = useState([]);
@@ -28,7 +29,9 @@ export default function Popular(){
             <h1>Popular Anime</h1>
             <div className="popular-anime-card-container">
                 {animeData.map((anime) => (
+                    <Link to={`/anime/${anime.id}`} className="popular-anime-link">
                     <PopularAnimeCard key={anime.id} anime={anime} />
+                    </Link>
                 ))}
             </div>
         </div>
