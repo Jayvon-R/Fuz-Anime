@@ -14,7 +14,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^3.0.1",
     "sqlite3": "^5.1.6",
     "web-vitals": "^2.1.4"
   },
@@ -23,7 +23,7 @@
     "server": "nodemon server.js",
     "json-server": "json-server -p 3001 -w db.json",
     "dev": "nodemon server.js",
-    "build": "react-scripts build", 
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
