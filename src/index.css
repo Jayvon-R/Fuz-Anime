@@ -43,7 +43,7 @@ h1 {
 }
 
 .navbar-link:hover {
-  color: rgb(206, 170, 240);
+  color: rgb(198, 160, 233);
   transition: color 0.3s ease-in-out;
 } 
 
