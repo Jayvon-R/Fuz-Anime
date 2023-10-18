@@ -22,19 +22,8 @@ export default function AddRatingForm({
   return (
     <div>
       <div className="rating-container">
-        <label>Rating (0-10): </label>
-        <input
-          type="number"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          min="0"
-          max="10"
-          required
-        />
       </div>
-      <button className="rating-container" onClick={handleAddRating}>
-        Add Rating
-      </button>
+
     </div>
   );
 }

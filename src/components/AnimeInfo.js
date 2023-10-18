@@ -18,8 +18,8 @@ export default function AnimeInfo() {
     } catch (error) {
       console.error(error);
     }
-  };
-
+  } 
+  
   useEffect(() => {
     const fetchAnimeData = async () => {
       try {
@@ -62,7 +62,6 @@ export default function AnimeInfo() {
               userRating={userRating}
               setUserRating={setUserRating}
             />
-            <p className="user-rating">Your Rating: {userRating}</p>
           </div>
 
           <ul>

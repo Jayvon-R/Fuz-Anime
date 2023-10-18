@@ -249,6 +249,7 @@ h1 {
   position: relative;
   top: 150px;
   width: 100%;
+  margin-left: 20px;
 }
 
 .info-card {
@@ -258,6 +259,7 @@ h1 {
   margin: 10px;
   width: 35vw;
   margin-left: 20px;
+  
 }
 
 .info-details {
@@ -266,6 +268,7 @@ h1 {
   margin-left: 50px; 
   margin-top: 10px;
   width: 40vw;
+  margin-left: 20px;
 }
 
 .info-title {
