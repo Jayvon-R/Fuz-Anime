@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { scrapeReviewsForAnime } from "./webScraper";
+import VideoPage from "./VideoPage";
 
 export default function AnimeInfo() {
   const { id } = useParams();
   const [animeData, setAnimeData] = useState(null);
 
   useEffect(() => {
-    // const scrapeAnimeReviews = async () => {
-    //   const reviewsData = await scrapeReviewsForAnime(animeData.title, 5);
-    //   setReviews(reviewsData);
-    // };
-
     const fetchAnimeData = async () => {
       try {
         const response = await axios.get(
@@ -53,9 +49,9 @@ export default function AnimeInfo() {
           <ul className="episode-list">
             {animeData.episodes.map((episode) => (
               <li key={episode.id}>
-                <a href={episode.url} target="" className="episode-link">
+                <Link to={`/video/${episode.id}`} className="episode-link">
                   EP {episode.number}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
