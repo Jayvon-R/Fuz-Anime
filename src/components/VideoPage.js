@@ -1,11 +1,14 @@
 import React from "react";
-import AnimeInfo from "./AnimeInfo";
+import { useParams } from "react-router-dom";
+import VideoServer from "./VideoServer";
 
-const VideoPage = ({ episodeUrl, animeData }) => {
+const VideoPage = () => {
+  const { episodeId } = useParams();
   return (
     <div>
       <video width={750} height={400} controls>
-        <source src={episodeUrl} type="video/mp4" />
+        <source src={episodeId} type="video/mp4" />
+        <VideoServer episodeId={episodeId}/>
       </video>
     </div>
   );
