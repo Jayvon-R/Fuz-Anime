@@ -1,6 +1,6 @@
 # Flatiron Front End Phase 2 Project - FuzAnime
 
-FuzAnime - a single-page application (SPA) build using React that allows users to explore anim and watch anime!
+FuzAnime - a single-page application built using React that allows users to explore and watch anime!
 
 ![Screenshot of FuzAnime App](https://github.com/Jayvon-R/flatiron-phase-2-project/blob/main/Screenshot%202023-10-08%20180723.png?raw=true)
 
@@ -9,6 +9,7 @@ FuzAnime - a single-page application (SPA) build using React that allows users t
 - Browse a list of the current top-airing anime
 - Search for anime by title
 - View detailed information about specific anime (synopsis, genres, airing status, etc)
+- Watch anime
 
 
 ## Installation

@@ -22,7 +22,7 @@
 //     const reviewElements = document.querySelectorAll('.borderDark');
 //     const reviewData = [];
 
-//     for (let i = 0; i < numReviews && i < reviewElements.length; i++) {
+//     for (let i = 0; i < numReviews && i < reviewElments.length; i++) {
 //       const review = reviewElements[i];
 //       const reviewer = review.querySelector('.spaceit h2 a').textContent.trim();
 //       const score = review.querySelector('.borderLight .spaceit .dark_text').textContent.trim();
