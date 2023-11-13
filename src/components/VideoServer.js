@@ -12,7 +12,7 @@ const VideoServer = ({ episodeId, onServerChange }) => {
         const data = response.data;
 
         if (data.length > 0) {
-          const targetServers = ["Filelions", "Streamwish"];
+          const targetServers = ["Filelions", "Mp4Upload", "Gogo server", "Vidsteaming"];
           const filteredData = data.filter((link) =>
             targetServers.includes(link.name)
           );

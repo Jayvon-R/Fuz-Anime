@@ -59,7 +59,7 @@ export default function NavBar() {
         <div className="search-results-container">
           {searchResults.length > 0 &&
             searchResults.map((anime) => (
-                <Link to={`/anime/${anime.id}`} className="search-results" key={anime.id}>
+                <Link to={`/anime/${anime.id}`} className="search-results" key={anime.id} onClick={() => setSearchQuery('')}>
                 <img src={anime.image} className="search-image" alt="search-icon" />
                 <h4 className="search-image-text">{anime.title}</h4>
               </Link>
