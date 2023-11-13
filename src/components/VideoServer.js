@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 
-export default function VideoServer({ episodeId }) {
+const VideoServer = ({ episodeId, serverName }) => {
   useEffect(() => {
     const fetchData = async () => {
-      const url = `https://api.consumet.org/anime/gogoanime/servers/${episodeId}`;
+      const url = `https://api.consumet.org/anime/gogoanime/servers/${episodeId}?server=${serverName}`;
       try {
         const response = await axios.get(url);
         const data = response.data;
@@ -14,7 +14,9 @@ export default function VideoServer({ episodeId }) {
       }
     };
     fetchData();
-  }, [episodeId]);
+  }, [episodeId, serverName]);
 
   return <div>Fetching server data...</div>;
-}
+};
+
+export default VideoServer;

@@ -304,3 +304,10 @@ h1 {
 .episode-link:hover {
   background-color: rgb(32, 32, 32);
 }
+
+.video {
+  display: block;
+  margin: 50px auto;
+  width: 500px;
+  height: 500px;
+}

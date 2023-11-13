@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import VideoServer from "./VideoServer";
 
 const VideoPage = () => {
   const { episodeId } = useParams();
   const [videoLinks, setVideoLinks] = useState([]);
-  const [selectedQuality, setSelectedQuality] = useState("");
+  const [selectedServer, setSelectedServer] = useState("");
 
   useEffect(() => {
     const fetchVideoLinks = async () => {
       try {
-        const url = `https://api.consumet.org/anime/gogoanime/watch/${episodeId}?server=gogocdn`;
+        const url = `https://api.consumet.org/anime/gogoanime/watch/${episodeId}`;
         const response = await axios.get(url);
         const data = response.data;
 
@@ -18,8 +19,8 @@ const VideoPage = () => {
 
         if (data.sources && Object.keys(data.sources).length > 0) {
           setVideoLinks(Object.values(data.sources));
-          setSelectedQuality(Object.values(data.sources)[0].url);
-          console.error("No streaming links available for this episode.");
+          setSelectedServer(Object.values(data.sources)[0].url);
+          console.error();
         }
       } catch (error) {
         console.error("Error fetching streaming links:", error);
@@ -29,13 +30,27 @@ const VideoPage = () => {
     fetchVideoLinks();
   }, [episodeId]);
 
+  const handleServerChange = (event) => {
+    setSelectedServer(event.target.value)
+  }
+
   return (
     <div>
-          <video width={750} height={400} controls>
-            <source src={selectedQuality} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        <p>Loading video links...</p>
+      <select value={selectedServer} onChange={handleServerChange}>
+        {videoLinks.map((link, index) => (
+          <option key={index} value={link.url}>
+            {link.name} - {link.url}
+          </option>
+        ))}
+      </select>
+      <iframe
+        title="embedded-video"
+        src="https://awish.pro/e/lb5gjeb377qk"
+        allowFullScreen={true}
+        allow="autoplay *; fullscreen *; encrypted-media *;"
+        className="video"
+      ></iframe>
+      <VideoServer episodeId={episodeId} />
     </div>
   );
 };
