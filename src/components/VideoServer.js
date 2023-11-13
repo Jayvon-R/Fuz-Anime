@@ -1,22 +1,49 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const VideoServer = ({ episodeId, serverName }) => {
+const VideoServer = ({ episodeId, onServerChange }) => {
+  const [filteredLinks, setFilteredLinks] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
-      const url = `https://api.consumet.org/anime/gogoanime/servers/${episodeId}?server=${serverName}`;
       try {
+        const url = `https://api.consumet.org/anime/gogoanime/servers/${episodeId}`;
         const response = await axios.get(url);
         const data = response.data;
-        console.log(data);
+
+        if (data.length > 0) {
+          const targetServers = ["Filelions", "Streamwish"];
+          const filteredData = data.filter((link) =>
+            targetServers.includes(link.name)
+          );
+          setFilteredLinks(filteredData);
+          if (filteredData.length > 0) {
+            onServerChange(filteredData[0].url); // Passing the URL of the first filtered server
+          }
+        }
       } catch (error) {
         console.error("Error fetching server data:", error);
       }
     };
-    fetchData();
-  }, [episodeId, serverName]);
 
-  return <div>Fetching server data...</div>;
+    fetchData();
+  }, [episodeId, onServerChange]);
+
+  return (
+    <div>
+      {filteredLinks.length > 0 ? (
+        <select className="server-select" onChange={(e) => onServerChange(e.target.value)}>
+          {filteredLinks.map((link, index) => (
+            <option key={index} value={link.url}>
+              {link.name}
+            </option>
+          ))}
+        </select>
+      ) : (
+        <div></div>
+      )}
+    </div>
+  );
 };
 
 export default VideoServer;
